@@ -64,6 +64,11 @@
     <color name="luckyColor">#11B5C8</color>
     <color name="secondaryTextColor">#5C1349</color>
     <color name="darkthemecolor">#119892</color>
+    <color name="dark_blue">#3023AE</color>
+    <color name="purple">#c86dd7</color>
+    <color name="login_form_details">#ccffffff</color>
+    <color name="login_form_details_light">#1affffff</color>
+    <color name="login_form_details_medium">#66ffffff</color>
 
     <!--gradient colors-->
     <color name="gradStart">#19AA8B</color>

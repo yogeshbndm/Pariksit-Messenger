@@ -15,9 +15,13 @@ import androidx.appcompat.widget.AppCompatButton;
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
+import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.androidnetworking.interfaces.ParsedRequestListener;
 import com.google.gson.Gson;
-import com.pariksit.pariksitmessenger.ChatFragment.MainUser;
+import com.pariksit.pariksitmessenger.ChatFragment.User;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class LoginActivity extends AppCompatActivity {
     EditText userId, userPass;
@@ -65,16 +69,16 @@ public class LoginActivity extends AppCompatActivity {
                 .setTag("test")
                 .setPriority(Priority.MEDIUM)
                 .build()
-                .getAsObject(MainUser.class, new ParsedRequestListener<MainUser>() {
+                .getAsObject(User.class, new ParsedRequestListener<User>() {
                     @Override
-                    public void onResponse(MainUser mainUser) {
+                    public void onResponse(User user) {
                         // do anything with response
-                        if("".equals(mainUser.getId())) {
+                        if("".equals(user.getId())) {
                             //uid null, means login failed
                             Toast.makeText(LoginActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
                         }
                         else {
-                            saveDataInPrefs(mainUser);
+                            saveDataInPrefs(user);
                         }
                     }
 
@@ -85,8 +89,8 @@ public class LoginActivity extends AppCompatActivity {
                 });
     }
 
-    private void saveDataInPrefs(MainUser mainUser) {
-        prefsEditor.putString("mainUser", mainUser.toString());
+    private void saveDataInPrefs(User user) {
+        prefsEditor.putString("mainUser", user.toString());
         prefsEditor.commit();
         moveToMainPage();
     }
