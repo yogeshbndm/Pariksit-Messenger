@@ -90,7 +90,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void saveDataInPrefs(User user) {
-        prefsEditor.putString("details", user.toString());
+        prefsEditor.putString("mainUser", user.toString());
         prefsEditor.commit();
         moveToMainPage();
     }

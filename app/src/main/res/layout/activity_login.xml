@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="@color/register_bk_color"
+    android:background="@drawable/grad_bg_2"
     android:focusableInTouchMode="true"
     android:gravity="center"
     tools:context=".LoginActivity">
