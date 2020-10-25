@@ -1,12 +1,12 @@
 package com.pariksit.pariksitmessenger.ChatFragment;
 
-public class User {
+public class MainUser {
     String name, group, registeredBy, userType, id, dp, dpStamp;
 
-    public User() {
+    public MainUser() {
     }
 
-    public User(String name, String group, String registeredBy, String userType, String id, String dp, String dpStamp) {
+    public MainUser(String name, String group, String registeredBy, String userType, String id, String dp, String dpStamp) {
         this.name = name;
         this.group = group;
         this.registeredBy = registeredBy;

@@ -1,12 +1,12 @@
 package com.pariksit.pariksitmessenger.ChatFragment;
 
 public class ChatNode {
-    String name, lastchat, lastchattime, chatunread, dp, chattype, id, dpstamp;
+    String name, lastchat, lastchattime, chatunread, dp, chattype, id, dpstamp, usertype;
 
     public ChatNode() {
     }
 
-    public ChatNode(String id, String name, String lastchat, String lastchattime, String chatunread, String dp, String dpstamp, String chattype) {
+    public ChatNode(String id, String name, String lastchat, String lastchattime, String chatunread, String dp, String dpstamp, String chattype, String usertype) {
         this.id = id;
         this.name = name;
         this.lastchat = lastchat;
@@ -15,6 +15,7 @@ public class ChatNode {
         this.dp = dp;
         this.chattype = chattype;
         this.dpstamp = dpstamp;
+        this.usertype = usertype;
     }
 
     public String getName() {
@@ -80,5 +81,13 @@ public class ChatNode {
 
     public void setDpstamp(String dpstamp) {
         this.dpstamp = dpstamp;
+    }
+
+    public String getUsertype() {
+        return usertype;
+    }
+
+    public void setUsertype(String usertype) {
+        this.usertype = usertype;
     }
 }
