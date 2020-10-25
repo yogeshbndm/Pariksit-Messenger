@@ -14,6 +14,7 @@ public class Utils {
     public static final String url = "https://www.pariksit.com/messenger/android/";
     public static final String fetchChatNodes = url+"fetchChatNodes/";
     public static final String chatlisturl = fetchChatNodes+"1.supplyChatNode.php";
+    public static final String loginUrl = url+"register-login/0.credentialVerification.php";
 
     public static File getDirectoryForExams(Activity activity, String ext) {
         File path= new File(activity.getFilesDir(), "PARIKSIT-MESSENGER" + File.separator + "ZIPS" + File.separator + ext);
