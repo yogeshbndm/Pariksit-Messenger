@@ -66,17 +66,17 @@ public class ChatFragment extends Fragment implements View.OnClickListener {
     }
 
     private void fetchChatlist(String userId, String registeredBy) {
-        AndroidNetworking.post(Utils.chatlisturl)
+        AndroidNetworking.post(Utils.chatNodes)
                 .addBodyParameter("uid", userId)
                 .addBodyParameter("registeredby", registeredBy)
                 .setTag("fetchChatList")
                 .setPriority(Priority.MEDIUM)
                 .build()
-                .getAsObjectList(User.class, new ParsedRequestListener<List<User>>() {
+                .getAsObjectList(ChatNode.class, new ParsedRequestListener<List<ChatNode>>() {
                     @Override
-                    public void onResponse(List<User> userList) {
+                    public void onResponse(List<ChatNode> chatNodes) {
                         Gson gson = new Gson();
-                        String json = gson.toJson(userList);
+                        String json = gson.toJson(chatNodes);
                         Log.e(TAG, "Chat Nodes recieved from server");
                         prefsEditor.putString("chatNodes", json);
                         prefsEditor.commit();
@@ -93,12 +93,11 @@ public class ChatFragment extends Fragment implements View.OnClickListener {
     private void populateChatListView() {
         refresh.clearAnimation();
         Gson gson = new Gson();
-        String json = prefs.getString("partialChatNodes", "");
-        Type type = new TypeToken<List<User>>() {}.getType();
-        List<User> partialChatNodesFromServer = gson.fromJson(json, type);
-
-        List<ChatNode> chatNodeList = new ArrayList<>();
-        ChatListAdapter chatListAdapter = new ChatListAdapter(chatNodeList, getActivity());
+        String json = prefs.getString("chatNodes", "");
+        Type type = new TypeToken<List<ChatNode>>() {}.getType();
+        List<ChatNode> chatNodes = gson.fromJson(json, type);
+        //List<ChatNode> chatNodeList = new ArrayList<>();
+        ChatListAdapter chatListAdapter = new ChatListAdapter(chatNodes, getActivity());
 
         RecyclerView chatRV = view.findViewById(R.id.listviewChat);
         RecyclerView.LayoutManager layoutManager1 = new LinearLayoutManager(getActivity().getApplicationContext());
@@ -107,16 +106,7 @@ public class ChatFragment extends Fragment implements View.OnClickListener {
         chatRV.setItemAnimator(new DefaultItemAnimator());
         chatRV.addItemDecoration(new DividerItemDecoration(getActivity(), LinearLayoutManager.VERTICAL));
         chatRV.setAdapter(chatListAdapter);
-
-        for(int i=0; i<partialChatNodesFromServer.size(); i++) {
-            User pChatNode = partialChatNodesFromServer.get(i);
-            ChatNode chatNode = new ChatNode(pChatNode.getId(), pChatNode.getName(),
-                    "Tap to start chat.", "", "",
-                    pChatNode.getDp(), pChatNode.getDpStamp(),pChatNode.getUserType());
-            chatNodeList.add(chatNode);
-        }
-
-        chatListAdapter.notifyDataSetChanged();
+        //chatListAdapter.notifyDataSetChanged();
     }
 
     @Override
