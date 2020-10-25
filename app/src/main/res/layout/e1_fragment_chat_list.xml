@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/chat_bk"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/channel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textChannel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text="Channel"
+                android:layout_gravity="center"
+                style="@style/TextAppearance.MaterialComponents.Button"
+                android:textColor="@color/blue"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listviewChat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/teacher"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textTeacher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Teacher"
+                android:layout_gravity="center"
+                style="@style/TextAppearance.MaterialComponents.Button"
+                android:textColor="@color/blue"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listviewTeacher"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/personal"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textPersonal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Personal"
+                android:layout_gravity="center"
+                style="@style/TextAppearance.MaterialComponents.Button"
+                android:textColor="@color/blue" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listviewPersonal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

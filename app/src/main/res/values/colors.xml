@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="background_color">#edf2fa</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="white_greyish">#EEEEEE</color>
+    <color name="button_selectorcolor">#9E9E9E</color>
+    <color name="red">#c70c0c</color>
+    <color name="blue">#303F9F</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="lightGrey">#d0eaeaea</color>
+    <color name="lightBlue">#2074ce</color>
+    <color name="lightRed">#f74926</color>
+    <color name="darkGrey">#868686</color>
+    <color name="transparent_pure">#00000000</color>
+    <color name="transparent_purer">#ffffff</color>
+    <color name="lightGreen">#4CAF50</color>
+
+    <color name="profilePrimaryDark">#FF3B30</color>
+    <color name="profileAccentColor">#F7F7F7</color>
+    <color name="whiteTextColor">#fff</color>
+    <color name="profileBackground">#fff</color>
+    <color name="blackTextColor">#000</color>
+    <color name="profileEditTextColor">#707070</color>
+
+    <color name="gradient_start">#5770f3</color>
+    <color name="gradient_end">#8e5aeb</color>
+    <color name="profile_desc">#D1D1FF</color>
+    <color name="bg_meta_container">#000000</color>
+    <color name="profile_default_tint">#e0e0e0</color>
+</resources>
